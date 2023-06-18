@@ -1,7 +1,6 @@
 from app import *
 from dash import html, dcc, Input, Output, State
 import pandas as pd
-import pdb
 import plotly.graph_objects as go
 
 df = pd.read_csv('countries-of-the-world-clean.csv')
