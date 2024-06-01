@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 df = pd.read_csv('countries-of-the-world-clean.csv')
 df_dicionario = df.to_dict()
 
-
+ 
 #Opções Dropdown
 options = [x for x in df['Region'].unique()]
 options.append('GLOBAL')
@@ -114,7 +114,7 @@ app.layout = dbc.Container([
                     dbc.Row([
                         dbc.Col([
                             html.Div(id='total-population'),
-                            dcc.Graph('population-distribution-graph', style={'margin-top':'30px'})
+                            dcc.Graph('population-distribution-graph', style={'margin-top':'30px'}, config={'showTips':False, 'displayModeBar':False})
                         ]),
                     ])
                 ])
@@ -240,4 +240,4 @@ def population_function(regiao, toggle, dataframe):
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=False, port=8080, host='0.0.0.0')
